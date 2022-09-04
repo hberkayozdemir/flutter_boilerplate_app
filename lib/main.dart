@@ -1,9 +1,11 @@
+import 'package:dessert_and_more/app/hbo.dart';
 import 'package:dessert_and_more/config/hbo_provider.dart';
+import 'package:dessert_and_more/config/hbo_theme_config.dart' as theme;
 import 'package:dessert_and_more/core/ui/functions/drawer_provider.dart';
 import 'package:dessert_and_more/core/ui/functions/hbo_scroll.dart';
 import 'package:flutter/material.dart';
-import 'package:dessert_and_more/core/theme/hbo_core_theme.dart' as theme;
 import 'package:provider/provider.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +25,7 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider (create: (_) => HboProvider()),
+        ChangeNotifierProvider(create: (_) => HboProvider()),
         ChangeNotifierProvider(create: (_) => DrawerProvider()),
         ChangeNotifierProvider(create: (_) => ScrollProvider()),
       ],
@@ -66,7 +68,7 @@ class _MaterialChildState extends State<MaterialChild> {
       themeMode: widget.provider.themeMode,
       initialRoute: "/",
       routes: {
-        "/": (context) => const MainPage(),
+        "/": (context) => const Hbo(),
       },
     );
   }
