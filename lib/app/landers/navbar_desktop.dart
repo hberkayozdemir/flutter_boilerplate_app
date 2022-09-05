@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dessert_and_more/app/widgets/navbar_action_button.dart';
 import 'package:dessert_and_more/config/hbo_provider.dart';
+import 'package:dessert_and_more/config/url_config.dart';
 import 'package:dessert_and_more/core/animations/entrance_fader.dart';
 import 'package:dessert_and_more/core/theme/hbo_dimension.dart';
 import 'package:dessert_and_more/core/theme/hbo_theme.dart';
@@ -46,14 +47,14 @@ class NavbarProvider extends StatelessWidget {
               ),
               onPressed: () {
                 html.window.open(
-                  "www.google.com",
+                  menuUrl,
                   "pdf",
                 );
               },
               child: Padding(
                 padding: Space.all(1.25, 0.45),
                 child: AutoSizeText(
-                  'RESUME',
+                  'MEN',
                   style: HboText.l1b,
                 ),
               ),
@@ -142,14 +143,14 @@ class NavBarDesktop extends StatelessWidget {
               ),
               onPressed: () {
                 html.window.open(
-                  "https://www.google.com",
+                  menuUrl,
                   "pdf",
                 );
               },
               child: Padding(
                 padding: Space.all(1.25, 0.45),
                 child: AutoSizeText(
-                  'RESUME',
+                  'MEN',
                   style: HboText.l1b,
                 ),
               ),

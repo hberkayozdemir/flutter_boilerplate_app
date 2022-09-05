@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dessert_and_more/config/hbo_provider.dart';
+import 'package:dessert_and_more/config/url_config.dart';
 import 'package:dessert_and_more/core/theme/hbo_theme.dart';
 import 'package:dessert_and_more/core/ui/functions/hbo_scroll.dart';
 import 'package:dessert_and_more/core/ui/thypography/app_typography.dart';
+import 'package:dessert_and_more/core/ui/toasts/hbo_toast.dart';
 import 'package:dessert_and_more/utils/urls/url_launcher.dart';
 import 'package:dessert_and_more/utils/widgets/navbar_utils.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +42,11 @@ class MobileDrawer extends StatelessWidget {
                   inactiveTrackColor: Colors.grey,
                   value: appProvider.isDark,
                   onChanged: (value) {
+                    HboToast.toast.error(
+                        context,
+                        appProvider.isDark
+                            ? "Tema Karanlık oldu."
+                            : "Tema Aydınlık oldu");
                     appProvider
                         .setTheme(value ? ThemeMode.dark : ThemeMode.light);
                   },
@@ -76,14 +83,14 @@ class MobileDrawer extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       side: BorderSide(color: HboTheme.c!.primary!)),
-                  onPressed: () => openURL("https:/www.google.com"),
+                  onPressed: () => openURL(menuUrl),
                   child: const ListTile(
                     leading: Icon(
                       Icons.book,
                       color: Colors.red,
                     ),
                     title: AutoSizeText(
-                      'RESUME',
+                      'Menü',
                     ),
                   ),
                 ),

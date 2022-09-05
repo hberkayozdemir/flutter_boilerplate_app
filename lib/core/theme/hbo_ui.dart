@@ -30,10 +30,6 @@ class UI extends InitializationAdapter {
   static bool? xlg;
   static bool? xxlg;
 
-  @override
-  FutureOr<void> init(BuildContext context) async {
-   
-  }
 
   static initChecks(MediaQueryData query) {
     var size = query.size;
