@@ -43,7 +43,7 @@ dependencies:
   url_strategy: ^0.2.0
   advstory: ^0.2.0
   carousel_slider: ^4.1.1
-  motion_toast: ^2.3.2
+  motion_toast: ^2.3.3
 
 dev_dependencies:
   flutter_test:
