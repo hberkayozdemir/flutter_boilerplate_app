@@ -1,16 +1,52 @@
-# dessert_and_more
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+>
 
-A few resources to get you started if this is your first Flutter project:
+# Boiler Plate Template Application
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## We have 3 main category for understand the boiler plate.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ - [ ] Architectural
+ - [ ] Behavioral
+ - [ ] Structural
+ 
+ ## Architecture
+ ### Clean Architecture
+[**Clean Architecture**](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)  is the blueprint for a modular system, which strictly follows the design principle called separation of concerns. More specifically, this style of architecture focuses on dividing software into layers, to simplify the development and maintenance of the system itself. When layers are well-separated, individual pieces can be reused, as well as developed and updated independently.
+
+Clean Architecture is one of the most powerful solutions to build clean apps with independent data layers that multiple teams can work on. The resulting app would also be scalable, readable, testable, and can be easily maintained at any time.
+ ### Pine Architecture 
+ ![Pine Architecture Image](https://miro.medium.com/max/1400/0*QpO8BoRtEMfk8lfp.png)
+ When we speak about the architecture of a Flutter project, every single component resides in the widget tree. It could be a visible widget or something less tangible that has to do with the business logic like a repository or a service, but at the end of the day, everything is there.
+
+Since the beginning,  **Dependency Injection**  has been the common design pattern used in Flutter to inject elements into the widget tree. Flutter’s early adopters will easily remember about  [InheritedWidgets](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html), a particular type of widget mainly used to inject non-tangible elements into the widget tree.  **InheritedWidget** is really easy to understand and pretty straightforward when it comes to its use. The main downside is the boilerplate code around its definition.
+
+The revolution started with  [Provider](https://pub.dev/packages/provider), a library that simplified the injection of different types of elements into the widget tree.  **Provider**  has been widely adopted by the Flutter community and works pretty well in combination with  [ChangeNotifier](https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html). Provider aims to remove the boilerplate code from the definition of an InheritedWidget. In fact, in terms of the number of lines of code, injecting an element in the widget tree with Provider takes only a single line:
+ >Which problem pine architecture can solve?
+
+Flutter is a relatively easy framework that gives everyone the ability to create applications. Most people out there can to create a product that works, but I strongly believe that as  **developers**  we should focus more on  _how things work_.
+
+Software engineering comes in help: if you ever attended a lesson in computer science at the University, one of the first things that will teach you is about software architectures.
+
+When it comes to Flutter architecture, I love to apply a customized version of the  [Flutter Clean Code Architecture](https://medium.com/ruangguru/an-introduction-to-flutter-clean-architecture-ae00154001b0). Generally speaking, my projects are organized into four different layers as follows:
+
+Pine architecture implementation still in proggress in https://github.com/hberkayozdemir/flutter_boilerplate_app
+
+ ## Behavioral Pattterns
+ >Hbo Responsive :
+ >![enter image description here](https://lh3.googleusercontent.com/Km4JiBzpwxCIK-x_Tb_jvIwCSlb2axUeeWUDYiDSjGAcPj9FYUpCXEd-8ZxzDbYhrrZRBNKP8T8Thvs2lRc-vx0QOZifankZXv4dH8o7tkpM2rBWStIH5UVfDDpyIFkz90VYznTRZjHaq8OCGvPwKWsa30uyUZSE5gZzSdtzAfiZfqihtsxG0p211Q3LsLEyRof_wfKPqmRf6ndaMnsVDUyi04e9ZOZ01-qSdCvushZB1Y_5JBMdoGcNFSPJOcQTAj4APtqq9Rjkku3_ArN9X3krikh2ROP7UTf1PTS5lUVNPf--U4AnkjN8RcN-lp5ZhN2oIzaIFPTSNBeI6RghahYSgP1hnQ-A7CXiUVpWcPKtZ7-X_eBJev89GCtUVrFkHiEmfFZ4fpdK-6X2dHNuXxnO304uh2cBwtlF-sP4cafeDnVmCoQKR824oaL7l6CHDcBfBBYeJcK9asA2K9LTgf_SDcpuIjcxvhPgarjw-vnsWPiLrWudiTDv8wclm16YcgY76GVtEjcAtchbj5XeYcIBx3y4AfjK5ovHE-MTT575JiVd6Q1eaqsz6jt-1bhOh97h93qvLlb0IoXrU7Sv2KrgNkS1WfyeJyVC3cr6pM4iNLESiV8KMpDUx64Ewg3awJWxKdz4PWtC4uu4ppYSvwO2pcqg9vY4W9rKe24ZeaIDV4lNl1X-2-lXjl3AOHOI0HcBrrC5Ws67OVUNG2xAYcnFGm_3F6DqOxF5A_9c8A8_maASUvMPzuElqNk=w1032-h770-no?authuser=0)
+
+>Logger Chain Of Responsibility
+>![enter image description here](https://www.planttext.com/api/plantuml/png/hL9DJuGm4BttLqmuQJRh3vXuM6yUzkOQZwIq5Kc0aavP3iX_jrAK1jUb1Y_DV7RUp7i7ijpOjYePAGirhnGrNAWdrN33hJQ0o9WeEH4aKX4fOrDUoxJIHY6AyMqBHAivMK9yotGwsdVI_OlucEdJfvj0pm1wDyqMOe3TLnp6OfVQdNKXGHcZpStjjr_Khpfm7JhYkGeYr0hXWYuoCBOHeTxlDouPXw3ZffuwNvoPmFtxzicCPsGD5nR-mDOF9FsLKo-uc2-_96zO4qofSx-ACt9bqg9godcXXwOvwlo2O7m2N9FBx8zZBwJUzGXaY2Q47jZdmEvMT1C7zAfkehxu5mI-0f6C6FkSCrNwKyLFcGTCdIiAZTinMg6hQFgBPCfV2EyMed247rGjdwlo0m00)
+
+ ## Structural Pattterns
+ >Initiliaze Adapter Pattern  :
+ ![enter image description here](https://lh3.googleusercontent.com/b537kdkyri_RI3WQU9OXpRyXgvxgDeNTD9Gf4n3HRH_RHG0-rHYEAWv2ZNBb8B1W3UmhnyecrjCMMLfYuK9GmHVEg1Uh8DePSrvg02aYJzXvfp2qXvRu9TAjyk8sIkbJEAsOs475WziC9472zJsC8Z3HM7K_w1xttM_35CGP2eoFAazyxPXYNBcqZvVaEXbpMoFyXjcp0PKNFg_kyNQJoWTAT-d9MOSpUiQ8c3WiIgGqwjgfeWArgk2hONnMUZG8X-1LBp8LdJLuBSngW2tEycU0u0lV9a086gPj2NmPqGBSd9Q_6Rwlw_MbS8i_Aks6JX7jIfBj_xqbm_3QbjKMsM6n-FxnUvTspdvqlAEeSC8iQEWbsD-hoz7LkVSVgn74NtpmehC_nxEON-2Gp5CQmBuCRsc9ZENBRUtsHLi-Bf_kMZnFfpu9MBXbPYidmScvKKF2RuCh11xBSYWWnaVdz-n0v6Nw-e14uX96ALpxBCjydXgckHmvBntWxus-Po9dRAJeGx25fPOTmzaqpuLQFGB2CEJ0Ogo_6PCNEkOndhoxYy2wwQuvsZXYO_xHAkTI_34ed9cO1KE6jKjuy3xFKPp4CjqgMTZLf-sHC0p7-kXcQz7MlAXyn6neyNen7AJnX7yEW4GC4W9HrY684RfCKaAPARncL5RV14suhj9hek3pyq0_qJ0LRDFHTUXVefJ7QGGN-Fbj8S_gBn2EvZBPb0pANLlwYoqvHgzXUsmGlOAwzYNWl60JsBEntbM=w2410-h1336-no?authuser=0)
+
+
+
+
+# All Architecture
+![enter image description here](https://www.planttext.com/api/plantuml/png/pLjBSziu4hxxLx1ocYsNjsgoDvNB7iUUcQJMpcIYP7DaWIGaeGmHN12qfNZptxVnu0CGI8AMBETY4zr0uskWkz5uwBTI82wgDJqfiOXojCPbWL8ynmNYI30UpMOd9ob5PHczoN1POYvYb6Vncd4ycwNgRqLcCy5GAShPR9MmM7t_CmEvizdxX7sHnJVHqqaKFK5lWgG_ejEQ7gdAm3fzO2IBCEUC__AFfapo1UiK0Ls9bhX3AQiq1I9GVfoSx8cGdPtjgMGOWaV4SzFo6to-YSx_jt_F9oWf1KUfY2RCrWwIfu6XTkQY7Nbtydu4MOnKHTaQDmZcik3QoJUIBR6uZ3PUwjPVzrT_PJzvyzPVsq_UhFsrRVBlGFsGWqULbz7tNiwgb_FGt-RN_aRzhDNR_bP-FGKhlFI42S5yOn1j5ieKTkXRbzxs7gq6U0y3F4Ifjhi_Ab5n_1S_bmPu0IPA146KVCS10Q7F05KOMD1A2CndivAdu2TA5N2O1OS8-SZuVUqrYZ7YznCwAX391ScNina6mJ5HwffMhVu3_Sc-r2XGWhut7NwenmM6akLN6IgWov2uqmCzoC4NLPxAxapOAbFEAAt5gC8dpXv89f6ekAE9romNyZ_cKUaGl9LIYvrjOGqZgMcgZSIctR64q13xc89_o6PqmxZ5QSbeDO5PjIKiM9LdQiO0rWhbO10v4sH16X7NYlhH44CcT89IKoSvu-WHyxWmxOtG6qLrPlfFoX94_ustv_CKBHQCPdFmSdm1KuHa2JY3rUw1Fs7wmf1DyVi-PCUUmo3DmXAurRPWIuwArNOsGqKHYwRSoJNmPYUJaxIvs58CYuF8-rZEkcLnabxMstvEVwD_zNDw6oMzy99-U4allAGV7ktjYVRtH7jxeggdlTR12JC_k689g1AN4fPfri0ytdeLhikeKt3O2O6FaGVhkvNo6MWcd9bCPwrMbWv1e8HYqI50N_TkPfKmHYDIDikIX_T5oV7pRhH8lTAPRfAAq6naviFKUrOk55XVHKmAy4p3aUaD0Xo-3PfaU4y1FZRIdrZXjUbMVNRCKHQTg7e6z6jeftXHB4Mus-UMJSbo9VhPqD5zB_SoIYrUdIj9xNeC3iJjbtoF3iNWHhpJMX9S4OrcnmawOxfCiOjXTRGHNZFA-6LKSB96VBjBkJMsu91lj0tKL0HRzrpi4Dp6ckgqJL1wl-GohV4IvrNIePScE_AG7B5ozN2AjYX3UTiLjK8PUzmXc7QM4wIis7uZOXLkcYEpeMrKCUJ2em1CcksCh364C9QtuczgKkacMHch4hdShz56RXXWpSKSmgPO-Mk1SGzKauvy2Pvy2-XWDWhi5LAWB8DrtSEBkFGGYp47huVXXxzM5AkZYVAsMyIN6FOO67IqGujTRxw6xRsfznuiyaQEYTWwqMWkEA23eAC_7Au1ghQkVbRE-BeELXxs0eRlO55kPAeTKv9ZUVJWDGnnYbrNn8Zu-i5TrEvmHj3V5PRnIA3BA5vR1AyPFlPQ-Ghlh7iDYt7oNJe0zR8VG0MIEipkePZFzgr3CsARhv4RbsY1hpX6xxtzxzRxZmz8NKjMwlTnoNtVFm8mhakMEvArusysfO_g8vPh3t6T-PfxgNJfg-e5vQ_gahlfoVKAf_TE93crJIng3SmD7-1a4MIType27CBFBTCVIfqLhFY_4fTfOUCUSFy9tVrCXuaziCFpTKk0FF0eoaRC9rbobyoRIYrJUPIPZs5k_mbv8l9FA8C96ganN_iM4euoKjc-zOxn3FFFYd4fDucVn-eaCAqi7wsM8fvvAsrkC8oYqbCUuSisxvH8gzujASKvL9whBEf2ovlNETQ0lCqrL0pTHdHP6kn01Orog8R6DoYZ2tVifZ30p5x2q_RjLizfh8tDjEpQnejslOcpPdoRlZjZFfu-KBRK2E1Z2NgGTK7RHEIgA6xPqdE3h1aHD0BEsQrg6yMwgAyai-xrPFSki_FzqFb-736FCA23-zSW4GT1e6kO2TC5KrCFLNWlRGUcvKYq3zCnEFQFeddoJcRMC-6FZb6C7zwW77RHviWTTiGSvIcE5wWzSV_T4Fz0xIM7EOnBLqJlVzib1rEqjIdj4dNwrs8Xds8mzKyIBDdgq2o2pH7yKzyZ1ZiL-K4lFv_LURiHqYCnyK1nKT6myyI9u0vi8mghDfIpgxfbUnTu6SNMlMPRvzmiRR0ynzcc8VVNsNRhr2yvODqqnjCu2oaBLkB9vyZFKjjZPOsSpkVkdQbdg0vcVzEmkO2QCPzehuSrKoso5m6idFUxruLpMCSf_g9uzQMX4dH7DcJqUTAp04vn9lta9FQFFBEZxULkk8KCcwpLhKpTOfyOEWhcnMzCdXNWnc0VSa8weUtq2mmzrpF0sobmGXtQ9LfrE-4C7IsMXIdPMR5GkSrXyfJ6WJ5fGX_73PO71VOQaJ98WLSBas7e3k2IslQzaR8Db8Tr4BVBd-W6UJhwWJb0HG60O0cfE9QFgPZQHBFsjeWrTtQU0JwqWa5efcfJm3UiwCQV7mX-r9pOF6Feo3Ql45vPuMS0FjYOwCSVdHxqWuwVTKJwu1viFFJRbqu7-X7BppeUVN3t6uz6YnHnLfMOcgjbK-fSB1kAVtXWRsSegcbPOVfwWpPTfmEDOGaHcU3wuIeKEa-wvh9e1i-yKx7kuEhhOa64Vg6bHkIyRddXsGqSE2S_hAOlFQHntLFtdCBSQCJrbMn3Q6vY6qfpwz5GIiX0xvlxp8QyHCLSlneuK_CMbols-1LK-YX_YgIETUMjX7fUSH5185-WYWfzjAs8ktN0v70gSDQowyuW0Iv6t4jdogLDLHNdL2Pypp2E5xO9Pwh6B0EQjyPKFxoldU5OVc2328UiTMstbtik8y4estx7i58eOwuIpAoUeNVmUUHrhnT6C7wT8CJwWNbzIQre-dNvQoaqYYjOmnmz98WxkU57HNH-hd1q9KEWxQtdEyHV9IUR0EmGEhxErcGAiZ4j6qX65bA__eZrem1BufNYw4lp9hQhn8UY1Aj4YEGY8e1jSypHUAO6WqSW-O8isoSgzH5AKRZtnCrhHy5tw97CDguo-xc4ytPX-7QmHU6S5i6AOKUHC_Lmz8vba8Y8-bETaJPqYznvRktUUzU2ez8v-6oUMvYVw6AXX0-SweJXznpYhA5dJX1LCrp_uAF6_w8_Wmg2F31fbI2qtBL9HRPiyQkakEQaKatjL1Vwz_Axx0y0KZxZkeW8V9M39kIYaGksXKKks_r8jFjTH78hEzpH6f7QrUwsZP-Sgk--6v43vtux42R0FKhQv-yq4ALnY6jvhcg0TdsrDjOsuRPQ-5BlAVtrlZa9SvUNd6eBQDXWnbQZxjmtSGwcfmvkFNT1np0J7z2JavFVS9vLQ_f_)
+

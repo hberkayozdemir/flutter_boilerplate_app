@@ -6,7 +6,7 @@ import 'package:dessert_and_more/core/ui/functions/hbo_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
-
+import 'package:dcdg/dcdg.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setPathUrlStrategy();

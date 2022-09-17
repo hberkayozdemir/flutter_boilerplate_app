@@ -1,0 +1,459 @@
+@startuml
+set namespaceSeparator ::
+
+class "dessert_and_more::core::ui::toasts::hbo_toast.dart::HboToast" {
+  {static} +HboToast toast
+  +void error()
+  +void info()
+  +void message()
+  +void success()
+}
+
+"dessert_and_more::core::ui::toasts::hbo_toast.dart::HboToast" o-- "dessert_and_more::core::ui::toasts::hbo_toast.dart::HboToast"
+"dessert_and_more::core::ui::toasts::warn.dart::Warn" <|-- "dessert_and_more::core::ui::toasts::hbo_toast.dart::HboToast"
+
+abstract class "dessert_and_more::core::ui::toasts::warn.dart::Warn" {
+  +void message()
+  +void info()
+  +void success()
+  +void error()
+}
+
+class "dessert_and_more::core::ui::hbo_spacer.dart::Space" {
+  {static} +Widget? x
+  {static} +Widget? y
+  {static} +Widget? x1
+  {static} +Widget? y1
+  {static} +Widget? x2
+  {static} +Widget? y2
+  {static} +Widget? xm
+  {static} +Widget? ym
+  {static} +EdgeInsets? z
+  {static} +EdgeInsets? h
+  {static} +EdgeInsets? v
+  {static} +EdgeInsets? h1
+  {static} +EdgeInsets? v1
+  {static} +EdgeInsets? h2
+  {static} +EdgeInsets? v2
+  {static} +Widget? top
+  {static} +Widget? bottom
+  {static} +Widget xf()
+  {static} +Widget yf()
+  {static} +EdgeInsets hf()
+  {static} +EdgeInsets vf()
+  {static} +EdgeInsets all()
+  +FutureOr<void> initialize()
+}
+
+"dessert_and_more::core::ui::hbo_spacer.dart::Space" o-- "flutter::src::widgets::framework.dart::Widget"
+"dessert_and_more::core::ui::hbo_spacer.dart::Space" o-- "flutter::src::painting::edge_insets.dart::EdgeInsets"
+"dessert_and_more::core::hbo_initiliazer.dart::InitializationAdapter" <|-- "dessert_and_more::core::ui::hbo_spacer.dart::Space"
+
+class "dessert_and_more::core::ui::functions::hbo_scroll.dart::ScrollProvider" {
+  +ScrollController scrollController
+  +ScrollController controller
+  +dynamic scroll()
+  +dynamic scrollMobile()
+}
+
+"dessert_and_more::core::ui::functions::hbo_scroll.dart::ScrollProvider" o-- "flutter::src::widgets::scroll_controller.dart::ScrollController"
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "dessert_and_more::core::ui::functions::hbo_scroll.dart::ScrollProvider"
+
+class "dessert_and_more::core::ui::functions::drawer_provider.dart::DrawerProvider" {
+  +GlobalKey<ScaffoldState> scafoldKey
+  +GlobalKey<ScaffoldState> key
+}
+
+"dessert_and_more::core::ui::functions::drawer_provider.dart::DrawerProvider" o-- "flutter::src::widgets::framework.dart::GlobalKey<ScaffoldState>"
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "dessert_and_more::core::ui::functions::drawer_provider.dart::DrawerProvider"
+
+class "dessert_and_more::core::ui::thypography::app_typography.dart::HboText" {
+  {static} +TextStyle? btn
+  {static} +TextStyle? h1
+  {static} +TextStyle? h1b
+  {static} +TextStyle? h2
+  {static} +TextStyle? h2b
+  {static} +TextStyle? h3
+  {static} +TextStyle? h3b
+  {static} +TextStyle? b1
+  {static} +TextStyle? b1b
+  {static} +TextStyle? b2
+  {static} +TextStyle? b2b
+  {static} +TextStyle? l1
+  {static} +TextStyle? l1b
+  {static} +TextStyle? l2
+  {static} +TextStyle? l2b
+  +FutureOr<void> initialize()
+}
+
+"dessert_and_more::core::ui::thypography::app_typography.dart::HboText" o-- "flutter::src::painting::text_style.dart::TextStyle"
+"dessert_and_more::core::hbo_initiliazer.dart::InitializationAdapter" <|-- "dessert_and_more::core::ui::thypography::app_typography.dart::HboText"
+
+class "dessert_and_more::core::responsive::responsive.dart::HboResp" {
+  +Widget mobile
+  +Widget tablet
+  +Widget desktop
+  {static} +bool isMobile()
+  {static} +bool isTablet()
+  {static} +bool isDesktop()
+  +Widget build()
+}
+
+"dessert_and_more::core::responsive::responsive.dart::HboResp" o-- "flutter::src::widgets::framework.dart::Widget"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::core::responsive::responsive.dart::HboResp"
+
+abstract class "dessert_and_more::core::hbo_initiliazer.dart::InitializationAdapter" {
+  +FutureOr<void> initialize()
+}
+
+class "dessert_and_more::core::theme::hbo_theme.dart::HboTheme" {
+  {static} -HboCoreTheme _core
+  {static} +HboCoreTheme light
+  {static} +HboCoreTheme dark
+  {static} +HboCoreTheme? c
+  {static} +dynamic init()
+  {static} +bool isDark()
+  +FutureOr<void> initialize()
+}
+
+"dessert_and_more::core::theme::hbo_theme.dart::HboTheme" o-- "dessert_and_more::core::theme::hbo_core_theme.dart::HboCoreTheme"
+"dessert_and_more::core::hbo_initiliazer.dart::InitializationAdapter" <|-- "dessert_and_more::core::theme::hbo_theme.dart::HboTheme"
+
+class "dessert_and_more::core::theme::hbo_core_theme.dart::HboCoreTheme" {
+  +Color? primary
+  +Color? primaryLight
+  +Color? primaryDark
+  +Color? accent
+  +Color? accentLight
+  +Color? accentDark
+  +Color? background
+  +Color? backgroundSub
+  +Color? scaffold
+  +Color? scaffoldDark
+  +Color? text
+  +Color? textSub
+  +Color? textSub2
+  +Color? shadow
+  +Color? shadowSub
+  +HboCoreTheme copyWith()
+}
+
+"dessert_and_more::core::theme::hbo_core_theme.dart::HboCoreTheme" o-- "dart::ui::Color"
+
+class "dessert_and_more::core::theme::hbo_dimension.dart::HboDimensions" {
+  {static} +double? maxContainerWidth
+  {static} +double? miniContainerWidth
+  {static} +bool? isLandscape
+  {static} +double? padding
+  {static} +double ratio
+  {static} +Size? size
+  {static} -dynamic _initLargeScreens()
+  {static} -dynamic _initSmallScreensHighDensity()
+  {static} +String inString()
+  {static} +double space()
+  {static} +double normalize()
+  {static} +double font()
+  +FutureOr<void> initialize()
+}
+
+"dessert_and_more::core::theme::hbo_dimension.dart::HboDimensions" o-- "dart::ui::Size"
+"dessert_and_more::core::hbo_initiliazer.dart::InitializationAdapter" <|-- "dessert_and_more::core::theme::hbo_dimension.dart::HboDimensions"
+
+class "dessert_and_more::core::theme::hbo_ui.dart::UI" {
+  {static} -MediaQueryData? _mediaQueryData
+  {static} +double? width
+  {static} +double? height
+  {static} +double? horizontal
+  {static} +double? vertical
+  {static} +EdgeInsets? padding
+  {static} +EdgeInsets? vi
+  {static} -double? _safeAreaHorizontal
+  {static} -double? _safeAreaVertical
+  {static} +double? safeWidth
+  {static} +double? safeHeight
+  {static} +double? diagonal
+  {static} +bool? xxs
+  {static} +bool? xs
+  {static} +bool? sm
+  {static} +bool? md
+  {static} +bool? xmd
+  {static} +bool? lg
+  {static} +bool? xl
+  {static} +bool? xlg
+  {static} +bool? xxlg
+  {static} +dynamic initChecks()
+  {static} +MediaQueryData mediaQuery()
+  {static} +Size getSize()
+  +FutureOr<void> initialize()
+}
+
+"dessert_and_more::core::theme::hbo_ui.dart::UI" o-- "flutter::src::widgets::media_query.dart::MediaQueryData"
+"dessert_and_more::core::theme::hbo_ui.dart::UI" o-- "flutter::src::painting::edge_insets.dart::EdgeInsets"
+"dessert_and_more::core::hbo_initiliazer.dart::InitializationAdapter" <|-- "dessert_and_more::core::theme::hbo_ui.dart::UI"
+
+abstract class "dessert_and_more::core::theme::hbo_ui_props.dart::UIProps" {
+  {static} +Duration duration
+  {static} +Duration duration2
+  {static} +EdgeInsets? btnPadMed
+  {static} +EdgeInsets? btnPadSm
+  {static} +double radius
+  {static} +BorderRadius? tabRadius
+  {static} +BorderRadius? buttonRadius
+  {static} +BorderRadius? cardRadius
+  {static} +BoxDecoration? borderButton
+  {static} +List<BoxShadow>? cardShadow
+  {static} +BoxDecoration? boxCard
+  {static} +dynamic init()
+  {static} +dynamic initRadius()
+  {static} +dynamic initButtons()
+  {static} +dynamic initShadows()
+  {static} +dynamic initBoxDecorations()
+}
+
+"dessert_and_more::core::theme::hbo_ui_props.dart::UIProps" o-- "flutter::src::painting::edge_insets.dart::EdgeInsets"
+"dessert_and_more::core::theme::hbo_ui_props.dart::UIProps" o-- "flutter::src::painting::border_radius.dart::BorderRadius"
+"dessert_and_more::core::theme::hbo_ui_props.dart::UIProps" o-- "flutter::src::painting::box_decoration.dart::BoxDecoration"
+
+class "dessert_and_more::core::log::hbo_logger_impl.dart::HboAppLog" {
+  {static} +HboAppLog log
+  -Logger _log
+  +void d()
+  +void e()
+  +void i()
+  +void v()
+  +void w()
+}
+
+"dessert_and_more::core::log::hbo_logger_impl.dart::HboAppLog" o-- "dessert_and_more::core::log::hbo_logger_impl.dart::HboAppLog"
+"dessert_and_more::core::log::hbo_logger_impl.dart::HboAppLog" o-- "logger::src::logger.dart::Logger"
+"dessert_and_more::core::log::hbo_logger.dart::HboLogger" <|-- "dessert_and_more::core::log::hbo_logger_impl.dart::HboAppLog"
+
+abstract class "dessert_and_more::core::log::hbo_logger.dart::HboLogger" {
+  +void v()
+  +void d()
+  +void i()
+  +void w()
+  +void e()
+}
+
+class "dessert_and_more::core::animations::entrance_fader.dart::EntranceFader" {
+  +Widget child
+  +Duration delay
+  +Duration duration
+  +Offset offset
+  +EntranceFaderState createState()
+}
+
+"dessert_and_more::core::animations::entrance_fader.dart::EntranceFader" o-- "flutter::src::widgets::framework.dart::Widget"
+"dessert_and_more::core::animations::entrance_fader.dart::EntranceFader" o-- "dart::ui::Offset"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "dessert_and_more::core::animations::entrance_fader.dart::EntranceFader"
+
+class "dessert_and_more::core::animations::entrance_fader.dart::EntranceFaderState" {
+  -AnimationController? _controller
+  -Animation<dynamic>? _dxAnimation
+  -Animation<dynamic>? _dyAnimation
+  +void initState()
+  +void dispose()
+  +Widget build()
+}
+
+"dessert_and_more::core::animations::entrance_fader.dart::EntranceFaderState" o-- "flutter::src::animation::animation_controller.dart::AnimationController"
+"dessert_and_more::core::animations::entrance_fader.dart::EntranceFaderState" o-- "flutter::src::animation::animation.dart::Animation<dynamic>"
+"flutter::src::widgets::framework.dart::State" <|-- "dessert_and_more::core::animations::entrance_fader.dart::EntranceFaderState"
+"flutter::src::widgets::ticker_provider.dart::SingleTickerProviderStateMixin" <|-- "dessert_and_more::core::animations::entrance_fader.dart::EntranceFaderState"
+
+class "dessert_and_more::core::animations::bottom_animation.dart::Animator" {
+  +Widget? child
+  +Duration? time
+  +AnimatorState createState()
+}
+
+"dessert_and_more::core::animations::bottom_animation.dart::Animator" o-- "flutter::src::widgets::framework.dart::Widget"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "dessert_and_more::core::animations::bottom_animation.dart::Animator"
+
+class "dessert_and_more::core::animations::bottom_animation.dart::AnimatorState" {
+  +Timer? timer
+  +AnimationController? animationController
+  +Animation<dynamic>? animation
+  +void initState()
+  +void dispose()
+  +Widget build()
+}
+
+"dessert_and_more::core::animations::bottom_animation.dart::AnimatorState" o-- "dart::async::Timer"
+"dessert_and_more::core::animations::bottom_animation.dart::AnimatorState" o-- "flutter::src::animation::animation_controller.dart::AnimationController"
+"dessert_and_more::core::animations::bottom_animation.dart::AnimatorState" o-- "flutter::src::animation::animation.dart::Animation<dynamic>"
+"flutter::src::widgets::framework.dart::State" <|-- "dessert_and_more::core::animations::bottom_animation.dart::AnimatorState"
+"flutter::src::widgets::ticker_provider.dart::SingleTickerProviderStateMixin" <|-- "dessert_and_more::core::animations::bottom_animation.dart::AnimatorState"
+
+class "dessert_and_more::core::animations::bottom_animation.dart::WidgetAnimator" {
+  +Widget child
+  +Widget build()
+}
+
+"dessert_and_more::core::animations::bottom_animation.dart::WidgetAnimator" o-- "flutter::src::widgets::framework.dart::Widget"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::core::animations::bottom_animation.dart::WidgetAnimator"
+
+class "dessert_and_more::app::features::home::home.dart::Home" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::features::home::home.dart::Home"
+
+class "dessert_and_more::app::features::home::presentation::view::home_desktop.dart::HomeDesktop" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::features::home::presentation::view::home_desktop.dart::HomeDesktop"
+
+class "dessert_and_more::app::features::home::presentation::view::home_mobile.dart::HomeMobile" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::features::home::presentation::view::home_mobile.dart::HomeMobile"
+
+class "dessert_and_more::app::features::home::presentation::view::home_tablet.dart::HomeTablet" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::features::home::presentation::view::home_tablet.dart::HomeTablet"
+
+class "dessert_and_more::app::features::home::presentation::widgets::carousel::hbo_carousel.dart::HboCarousel" {
+  +Widget build()
+  -Widget _carosuel()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::features::home::presentation::widgets::carousel::hbo_carousel.dart::HboCarousel"
+
+class "dessert_and_more::app::features::home::presentation::widgets::stories::hbo_story.dart::HboStory" {
+  +bool isHorizontal
+  +String title
+  +State<HboStory> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "dessert_and_more::app::features::home::presentation::widgets::stories::hbo_story.dart::HboStory"
+
+class "dessert_and_more::app::features::home::presentation::widgets::stories::hbo_story.dart::_HboStoryState" {
+  -double _width
+  -double _height
+  -double _radius
+  -double _strokeWidth
+  -double _gapSize
+  -bool _showUserNames
+  -List<Color> _defaultBorderColors
+  -List<Color> _selectedColors
+  -double _lerp
+  +Widget build()
+  -Widget _controls()
+  -Widget _buildSlider()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "dessert_and_more::app::features::home::presentation::widgets::stories::hbo_story.dart::_HboStoryState"
+
+class "dessert_and_more::app::hbo.dart::Hbo" {
+  +State<Hbo> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "dessert_and_more::app::hbo.dart::Hbo"
+
+class "dessert_and_more::app::hbo.dart::_HboState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "dessert_and_more::app::hbo.dart::_HboState"
+
+class "dessert_and_more::app::landers::body.dart::Body" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::landers::body.dart::Body"
+
+class "dessert_and_more::app::landers::mobile_drawer.dart::MobileDrawer" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::landers::mobile_drawer.dart::MobileDrawer"
+
+class "dessert_and_more::app::landers::navbar_desktop.dart::NavbarProvider" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::landers::navbar_desktop.dart::NavbarProvider"
+
+class "dessert_and_more::app::landers::navbar_desktop.dart::NavBarTablet" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::landers::navbar_desktop.dart::NavBarTablet"
+
+class "dessert_and_more::app::landers::navbar_desktop.dart::NavBarDesktop" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::landers::navbar_desktop.dart::NavBarDesktop"
+
+class "dessert_and_more::app::widgets::navbar_action_button.dart::NavBarActionButton" {
+  +String label
+  +int index
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "dessert_and_more::app::widgets::navbar_action_button.dart::NavBarActionButton"
+
+class "dessert_and_more::config::hbo_init.dart::App" {
+  {static} +bool? isLtr
+  {static} +bool showAds
+  {static} +dynamic init()
+}
+
+class "dessert_and_more::config::hbo_provider.dart::HboProvider" {
+  -ThemeMode _themeMode
+  +ThemeMode themeMode
+  +bool isDark
+  {static} +HboProvider state()
+  +void init()
+  +void setTheme()
+}
+
+"dessert_and_more::config::hbo_provider.dart::HboProvider" o-- "flutter::src::material::app.dart::ThemeMode"
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "dessert_and_more::config::hbo_provider.dart::HboProvider"
+
+class "dessert_and_more::utils::widgets::navbar_utils.dart::NavBarUtils" {
+  {static} +List<String> names
+  {static} +List<IconData> icons
+}
+
+class "dessert_and_more::utils::widgets::body_utils.dart::BodyUtils" {
+  {static} +List<Widget> views
+}
+
+class "dessert_and_more::main.dart::MyApp" {
+  +MyAppState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "dessert_and_more::main.dart::MyApp"
+
+class "dessert_and_more::main.dart::MyAppState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "dessert_and_more::main.dart::MyAppState"
+
+class "dessert_and_more::main.dart::MaterialChild" {
+  +HboProvider provider
+  +State<MaterialChild> createState()
+}
+
+"dessert_and_more::main.dart::MaterialChild" o-- "dessert_and_more::config::hbo_provider.dart::HboProvider"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "dessert_and_more::main.dart::MaterialChild"
+
+class "dessert_and_more::main.dart::_MaterialChildState" {
+  +void initAppTheme()
+  +void initState()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "dessert_and_more::main.dart::_MaterialChildState"
+
+
+@enduml
