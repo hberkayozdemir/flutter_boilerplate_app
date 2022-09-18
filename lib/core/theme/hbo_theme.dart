@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:dessert_and_more/core/hbo_initiliazer.dart';
-import 'package:dessert_and_more/core/theme/hbo_core_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/core/hbo_initiliazer.dart';
+import 'package:hbosoftware/core/theme/hbo_core_theme.dart';
 
 class HboTheme extends InitializationAdapter {
   static final _core = HboCoreTheme(

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(dessert_and_more LANGUAGES CXX)
+project(hbosoftware LANGUAGES CXX)
 
-set(BINARY_NAME "dessert_and_more")
+set(BINARY_NAME "hbosoftware")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -1,9 +1,9 @@
-import 'package:dessert_and_more/app/landers/body.dart';
-import 'package:dessert_and_more/app/landers/mobile_drawer.dart';
-import 'package:dessert_and_more/app/landers/navbar_desktop.dart';
-import 'package:dessert_and_more/config/hbo_init.dart';
-import 'package:dessert_and_more/core/responsive/responsive.dart';
-import 'package:dessert_and_more/core/ui/functions/drawer_provider.dart';
+import 'package:hbosoftware/app/landers/body.dart';
+import 'package:hbosoftware/app/landers/mobile_drawer.dart';
+import 'package:hbosoftware/app/landers/navbar_desktop.dart';
+import 'package:hbosoftware/config/hbo_init.dart';
+import 'package:hbosoftware/core/responsive/responsive.dart';
+import 'package:hbosoftware/core/ui/functions/drawer_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -28,9 +28,7 @@ class _HboState extends State<Hbo> {
         child: Stack(
           children: [
             const Body(),
-            HboResp.isTablet(context) || HboResp.isMobile(context)
-                ? const NavBarTablet()
-                : const NavBarDesktop(),
+    
           ],
         ),
       ),

@@ -1,13 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dessert_and_more/config/hbo_provider.dart';
-import 'package:dessert_and_more/config/url_config.dart';
-import 'package:dessert_and_more/core/theme/hbo_theme.dart';
-import 'package:dessert_and_more/core/ui/functions/hbo_scroll.dart';
-import 'package:dessert_and_more/core/ui/thypography/app_typography.dart';
-import 'package:dessert_and_more/core/ui/toasts/hbo_toast.dart';
-import 'package:dessert_and_more/utils/urls/url_launcher.dart';
-import 'package:dessert_and_more/utils/widgets/navbar_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/config/hbo_provider.dart';
+import 'package:hbosoftware/config/url_config.dart';
+import 'package:hbosoftware/core/theme/hbo_theme.dart';
+import 'package:hbosoftware/core/ui/functions/hbo_scroll.dart';
+import 'package:hbosoftware/core/ui/thypography/app_typography.dart';
+import 'package:hbosoftware/core/ui/toasts/hbo_toast.dart';
+import 'package:hbosoftware/utils/urls/url_launcher.dart';
+import 'package:hbosoftware/utils/widgets/navbar_utils.dart';
 import 'package:provider/provider.dart';
 
 class MobileDrawer extends StatelessWidget {

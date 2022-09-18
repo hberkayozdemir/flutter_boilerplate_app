@@ -1,6 +1,5 @@
-import 'package:dessert_and_more/core/theme/hbo_dimension.dart';
 import 'package:flutter/cupertino.dart';
-
+import 'package:hbosoftware/core/theme/hbo_dimension.dart';
 
 class ScrollProvider extends ChangeNotifier {
   final scrollController = ScrollController();

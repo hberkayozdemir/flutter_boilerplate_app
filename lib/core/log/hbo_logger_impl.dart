@@ -1,4 +1,4 @@
-import 'package:dessert_and_more/core/log/hbo_logger.dart';
+import 'package:hbosoftware/core/log/hbo_logger.dart';
 import 'package:logger/logger.dart';
 
 class HboAppLog extends HboLogger {

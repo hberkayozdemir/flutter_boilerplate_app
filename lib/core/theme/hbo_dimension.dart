@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:dessert_and_more/core/hbo_initiliazer.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/core/hbo_initiliazer.dart';
 
 import 'hbo_ui.dart';
 
@@ -15,8 +15,6 @@ class HboDimensions extends InitializationAdapter {
   static double ratio = 0;
 
   static Size? size;
-
-
 
   static _initLargeScreens() {
     const safe = 2.4;

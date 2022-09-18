@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:dessert_and_more/core/hbo_initiliazer.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hbosoftware/core/hbo_initiliazer.dart';
 
 class UI extends InitializationAdapter {
   static MediaQueryData? _mediaQueryData;
@@ -30,7 +30,6 @@ class UI extends InitializationAdapter {
   static bool? xlg;
   static bool? xxlg;
 
-
   static initChecks(MediaQueryData query) {
     var size = query.size;
     diagonal = sqrt((size.width * size.width) + (size.height * size.height));
@@ -48,10 +47,10 @@ class UI extends InitializationAdapter {
   static MediaQueryData mediaQuery() => _mediaQueryData!;
 
   static Size getSize() => _mediaQueryData!.size;
-  
+
   @override
-  FutureOr<void> initialize(BuildContext ? context) {
-   _mediaQueryData = MediaQuery.of(context!);
+  FutureOr<void> initialize(BuildContext? context) {
+    _mediaQueryData = MediaQuery.of(context!);
     initChecks(_mediaQueryData!);
 
     padding = _mediaQueryData!.padding;

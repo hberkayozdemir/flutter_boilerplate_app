@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:dessert_and_more/config/hbo_theme_config.dart';
-import 'package:dessert_and_more/core/hbo_initiliazer.dart';
-import 'package:dessert_and_more/core/theme/hbo_dimension.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/config/hbo_theme_config.dart';
+import 'package:hbosoftware/core/hbo_initiliazer.dart';
+import 'package:hbosoftware/core/theme/hbo_dimension.dart';
 
 class HboText extends InitializationAdapter {
   static TextStyle? btn;

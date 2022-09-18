@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dessert_and_more/config/carousel_config.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/config/carousel_config.dart';
 
 class HboCarousel extends StatelessWidget {
   const HboCarousel({Key? key}) : super(key: key);

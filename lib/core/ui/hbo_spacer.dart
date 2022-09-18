@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:dessert_and_more/core/hbo_initiliazer.dart';
-import 'package:dessert_and_more/core/theme/hbo_dimension.dart';
-import 'package:dessert_and_more/core/theme/hbo_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/core/hbo_initiliazer.dart';
+import 'package:hbosoftware/core/theme/hbo_dimension.dart';
+import 'package:hbosoftware/core/theme/hbo_ui.dart';
 
 class Space extends InitializationAdapter {
   static Widget? x;

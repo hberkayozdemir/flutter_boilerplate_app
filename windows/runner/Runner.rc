@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "dessert_and_more" "\0"
+            VALUE "FileDescription", "hbosoftware" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "dessert_and_more" "\0"
+            VALUE "InternalName", "hbosoftware" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "dessert_and_more.exe" "\0"
-            VALUE "ProductName", "dessert_and_more" "\0"
+            VALUE "OriginalFilename", "hbosoftware.exe" "\0"
+            VALUE "ProductName", "hbosoftware" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

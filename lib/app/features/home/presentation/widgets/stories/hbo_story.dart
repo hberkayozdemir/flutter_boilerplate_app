@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:advstory/advstory.dart';
-import 'package:dessert_and_more/config/story_config.dart';
-import 'package:dessert_and_more/core/theme/hbo_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/config/story_config.dart';
+import 'package:hbosoftware/core/theme/hbo_theme.dart';
 
 class HboStory extends StatefulWidget {
   const HboStory({

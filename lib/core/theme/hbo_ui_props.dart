@@ -1,6 +1,6 @@
-import 'package:dessert_and_more/core/theme/hbo_dimension.dart';
-import 'package:dessert_and_more/core/theme/hbo_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/core/theme/hbo_dimension.dart';
+import 'package:hbosoftware/core/theme/hbo_theme.dart';
 
 abstract class UIProps {
   // Animations

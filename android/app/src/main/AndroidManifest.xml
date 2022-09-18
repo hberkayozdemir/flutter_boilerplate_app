@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dessert_and_more">
+    package="com.example.hbosoftware">
    <application
-        android:label="dessert_and_more"
+        android:label="hbosoftware"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dessert_and_more/core/animations/entrance_fader.dart';
-import 'package:dessert_and_more/core/theme/hbo_theme.dart';
-import 'package:dessert_and_more/core/ui/functions/hbo_scroll.dart';
-import 'package:dessert_and_more/core/ui/hbo_spacer.dart';
-import 'package:dessert_and_more/core/ui/thypography/app_typography.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/core/animations/entrance_fader.dart';
+import 'package:hbosoftware/core/theme/hbo_theme.dart';
+import 'package:hbosoftware/core/ui/functions/hbo_scroll.dart';
+import 'package:hbosoftware/core/ui/hbo_spacer.dart';
+import 'package:hbosoftware/core/ui/thypography/app_typography.dart';
 import 'package:provider/provider.dart';
 
 class NavBarActionButton extends StatelessWidget {

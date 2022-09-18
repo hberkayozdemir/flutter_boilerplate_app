@@ -1,15 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dessert_and_more/app/widgets/navbar_action_button.dart';
-import 'package:dessert_and_more/config/hbo_provider.dart';
-import 'package:dessert_and_more/config/url_config.dart';
-import 'package:dessert_and_more/core/animations/entrance_fader.dart';
-import 'package:dessert_and_more/core/theme/hbo_dimension.dart';
-import 'package:dessert_and_more/core/theme/hbo_theme.dart';
-import 'package:dessert_and_more/core/ui/functions/drawer_provider.dart';
-import 'package:dessert_and_more/core/ui/hbo_spacer.dart';
-import 'package:dessert_and_more/core/ui/thypography/app_typography.dart';
-import 'package:dessert_and_more/utils/widgets/navbar_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/app/widgets/navbar_action_button.dart';
+import 'package:hbosoftware/config/hbo_provider.dart';
+import 'package:hbosoftware/config/url_config.dart';
+import 'package:hbosoftware/core/animations/entrance_fader.dart';
+import 'package:hbosoftware/core/theme/hbo_dimension.dart';
+import 'package:hbosoftware/core/theme/hbo_theme.dart';
+import 'package:hbosoftware/core/ui/functions/drawer_provider.dart';
+import 'package:hbosoftware/core/ui/hbo_spacer.dart';
+import 'package:hbosoftware/core/ui/thypography/app_typography.dart';
+import 'package:hbosoftware/utils/widgets/navbar_utils.dart';
 import 'package:provider/provider.dart';
 import 'package:universal_html/html.dart' as html;
 

@@ -1,12 +1,12 @@
-import 'package:dessert_and_more/app/hbo.dart';
-import 'package:dessert_and_more/config/hbo_provider.dart';
-import 'package:dessert_and_more/config/hbo_theme_config.dart' as theme;
-import 'package:dessert_and_more/core/ui/functions/drawer_provider.dart';
-import 'package:dessert_and_more/core/ui/functions/hbo_scroll.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/app/hbo.dart';
+import 'package:hbosoftware/config/hbo_provider.dart';
+import 'package:hbosoftware/config/hbo_theme_config.dart' as theme;
+import 'package:hbosoftware/core/ui/functions/drawer_provider.dart';
+import 'package:hbosoftware/core/ui/functions/hbo_scroll.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'package:dcdg/dcdg.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setPathUrlStrategy();
@@ -62,7 +62,7 @@ class _MaterialChildState extends State<MaterialChild> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Hilmi Berkay özdemir',
+      title: 'hbosoftware',
       theme: theme.themeLight,
       darkTheme: theme.themeDark,
       themeMode: widget.provider.themeMode,

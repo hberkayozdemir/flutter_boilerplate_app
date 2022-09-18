@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dessert_and_more/core/ui/thypography/app_typography.dart';
-import 'package:dessert_and_more/core/ui/toasts/warn.dart';
 import 'package:flutter/material.dart';
+import 'package:hbosoftware/core/ui/thypography/app_typography.dart';
+import 'package:hbosoftware/core/ui/toasts/warn.dart';
 import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
 
