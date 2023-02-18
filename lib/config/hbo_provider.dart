@@ -44,7 +44,7 @@ class HboProvider extends ChangeNotifier {
 
     await prefs.setString(
       'theme',
-      newTheme.toString().split('.').last,
+      newTheme.name,
     );
     notifyListeners();
   }
